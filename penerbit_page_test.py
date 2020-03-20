@@ -6,10 +6,13 @@ from selenium.webdriver.remote.file_detector import UselessFileDetector
 from selenium.webdriver.support import wait
 
 driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
-driver.get("http://localhost:3000/login")
+link_to_web = "http://localhost:3000/login"
+driver.get(link_to_web)
 driver.maximize_window()
 
 driver.file_detector = UselessFileDetector()
+path_to_file = "/Users/kelvin/Desktop/test_file.pdf"
+path_to_image = "/Users/kelvin/Desktop/test_file.jpeg"
 
 # Login
 driver.implicitly_wait(10)
@@ -49,61 +52,62 @@ driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/button[1]").click()
 print("Email Pemegang Saham Benar")
 
+
 # User memasukkan nomor legalitas dokumen perusahaan
 # Akta Pendirian
 driver.find_element_by_id("akta_pendirian").send_keys("1234567891234567")
 file_akta_pendirian = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='akta_pendirian']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_akta_pendirian)
-file_akta_pendirian.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_akta_pendirian.send_keys(path_to_file)
 print("FILE 1 UPLOADED")
 
 # SK Kemenkumham Akta Pendirian
 driver.find_element_by_id("sk_kemenkumham_akta_pendirian").send_keys("1234567891234567")
 file_sk_kemenkumham_1 = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='sk_kemenkumham_akta_pendirian']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_sk_kemenkumham_1)
-file_sk_kemenkumham_1.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_sk_kemenkumham_1.send_keys(path_to_file)
 print("FILE 2 UPLOADED")
 
 # Anggaran Dasar Terakhir
 driver.find_element_by_id("anggaran_dasar_terakhir").send_keys("1234567891234567")
 file_anggaran_dasar = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='anggaran_dasar_terakhir']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_anggaran_dasar)
-file_anggaran_dasar.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_anggaran_dasar.send_keys(path_to_file)
 print("FILE 3 UPLOADED")
 
 # SK Kemenkumham Anggaran Dasar Terakhir
 driver.find_element_by_id("sk_kemenkumham_anggaran_dasar_terakhir").send_keys("1234567891234567")
 file_sk_kemenkumham_2 = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='sk_kemenkumham_anggaran_dasar_terakhir']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_sk_kemenkumham_2)
-file_sk_kemenkumham_2.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_sk_kemenkumham_2.send_keys(path_to_file)
 print("FILE 4 UPLOADED")
 
 # NIB TDP
 driver.find_element_by_id("nib_tdp").send_keys("1234567891234567")
 file_nib_tdp = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='nib_tdp']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_nib_tdp)
-file_nib_tdp.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_nib_tdp.send_keys(path_to_file)
 print("FILE 5 UPLOADED")
 
 # Surat Izin Usaha
 driver.find_element_by_id("surat_izin_usaha").send_keys("1234567891234567")
 file_surat_izin = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='surat_izin_usaha']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_surat_izin)
-file_surat_izin.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_surat_izin.send_keys(path_to_file)
 print("FILE 6 UPLOADED")
 
 # SKDP
 driver.find_element_by_id("skdp").send_keys("1234567891234567")
 file_skdp = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='skdp']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_skdp)
-file_skdp.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_skdp.send_keys(path_to_file)
 print("FILE 7 UPLOADED")
 
 # NPWP Perusahaan
 driver.find_element_by_id("npwp_perusahaan").send_keys("1234567891234567")
 file_npwp = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='npwp_perusahaan']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_npwp)
-file_npwp.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_npwp.send_keys(path_to_file)
 print("FILE 8 UPLOADED")
 
 # User memilih status hutang
@@ -154,7 +158,7 @@ driver.find_element_by_id("merk_usaha").send_keys("Automate Test")
 # Logo merk
 logo_merk = driver.find_element_by_id("input_logo")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', logo_merk)
-logo_merk.send_keys("/Users/kelvin/Desktop/test_file.jpeg")
+logo_merk.send_keys(path_to_image)
 print("Logo Merk UPLOADED")
 # Status Merek
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/p[1]").click()
@@ -205,10 +209,10 @@ driver.find_element_by_id("jenis_usaha").send_keys("IT Consultant")
 # Tambah Foto Kampanye
 foto_kampanye = driver.find_element_by_id("upload-campaign")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', foto_kampanye)
-foto_kampanye.send_keys("/Users/kelvin/Desktop/test_file.jpeg")
+foto_kampanye.send_keys(path_to_image)
 print("Foto Kampanye UPLOADED")
 driver.implicitly_wait(10)
-foto_kampanye.send_keys("/Users/kelvin/Desktop/test_file.jpeg")
+foto_kampanye.send_keys(path_to_image)
 # User Menghapus foto Kampanye
 driver.implicitly_wait(10)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]").click()
@@ -229,12 +233,12 @@ driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3
 # Proposal Usaha
 file_proposal_usaha = driver.find_element_by_xpath("//input[@id='usaha']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_proposal_usaha)
-file_proposal_usaha.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_proposal_usaha.send_keys(path_to_file)
 print("Proposal Usaha UPLOADED")
 # Laporan Keuangan
 file_laporan_keuangan = driver.find_element_by_xpath("//input[@id='keuangan']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_laporan_keuangan)
-file_laporan_keuangan.send_keys("/Users/kelvin/Desktop/test_file.pdf")
+file_laporan_keuangan.send_keys(path_to_file)
 print("Laporan Keuangan UPLOADED")
 
 """

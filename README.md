@@ -1,29 +1,26 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Repository to Store Automation Test Code
 
 ### How do I get set up? ###
 
 * Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
+Link to Set Up Selenium on Local Machine:
+https://selenium-python.readthedocs.io/installation.html
+
+*** Use Chrome Web Driver ***
+
 * How to run tests
-* Deployment instructions
+1. Download & Install PyCharm (https://www.jetbrains.com/pycharm/download/)
+2. Open the .py file in PyCharm
+3. Run the code
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Configuration
+For penerbit_page_test.py Test
+Change
+	** link_to_web
+	** path_to_file
+	** path_to_image
+Based on your own configuration
