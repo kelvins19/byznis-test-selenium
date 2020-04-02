@@ -41,11 +41,13 @@ driver.find_element_by_id("nama_perseroan").send_keys("PT. Automate Test")
 print("Nama PT Input")
 
 # User memasukkan email pemegang saham (akun belum terdaftar)
-driver.find_element_by_id("email_pemegang_saham").send_keys("kelvin@byznis.id")
+"""
+driver.find_element_by_id("email_pemegang_saham").send_keys("madzarmr@byznis.id")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/button[1]").click()
 print("Email Pemegang Saham Salah")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/img[1]").click()
 print("Email Pemegang Saham di hapus")
+"""
 
 # User memasukkan email pemegang saham
 driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
@@ -249,8 +251,9 @@ print("Laporan Keuangan UPLOADED")
 """
 NOT WORKING YET. NEED TO BE REVISED.
 """
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[14]/div[1]/div[1]/div[1]")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[14]/div[1]/div[1]/div[1]").click()
 driver.implicitly_wait(10)
+#driver.find_element_by_class_name("css-2613qy-menu").click()
 print("Riwayat Element Found")
 
 # Submit Data (Error Handling)
@@ -265,8 +268,8 @@ print("Error Handling Successful")
 
 # Log Out
 driver.implicitly_wait(10)
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]").click()
-driver.implicitly_wait(10)
+#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]").click()
+#driver.implicitly_wait(10)
 driver.find_element_by_link_text("Keluar").click()
 driver.implicitly_wait(10)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[9]/div[1]/div[2]/div[1]/button[1]").click()
