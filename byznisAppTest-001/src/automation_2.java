@@ -2,9 +2,12 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 
@@ -25,12 +28,14 @@ public class automation_2 {
         AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         TouchAction ts = new TouchAction(driver);
+        Dimension screenSize = driver.manage().window().getSize();
+        System.out.println("Screen Size is " + screenSize);
 
         // LOGIN
         MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]");
         el1.click();
         MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[1]");
-        el2.sendKeys("test_user01@gmail.com");
+        el2.sendKeys("test_user@gmail.com");
         MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[2]");
         el3.sendKeys("TestUser001!");
         MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView");
@@ -67,19 +72,19 @@ public class automation_2 {
 
         // Cek Tahapan Status Akun
         driver.manage().timeouts().implicitlyWait(6000, TimeUnit.SECONDS);
-        Assert.assertEquals(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[6]").getText(), "Registrasi");
-        Assert.assertEquals(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[7]").getText(), "Lengkapi Profil");
-        Assert.assertEquals(driver.findElementByXPath("\t/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView[8]").getText(), "Mulai Investasi");
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Registrasi']").getText(), "Registrasi");
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Lengkapi Profil']").getText(), "Lengkapi Profil");
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Mulai Investasi']").getText(), "Mulai Investasi");
         System.out.println("Tahapan Status");
         driver.manage().timeouts().implicitlyWait(6000, TimeUnit.SECONDS);
 
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 428)).release().perform();
+        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 500)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         // User Melihat & Menyimpan kampanye terbaru
-        Assert.assertEquals(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView").getText(), "Terbaru");
+        //Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Terbaru']").getText(), "Terbaru");
         System.out.println("List Kampanye Terbaru Found");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         MobileElement el1_1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]");
@@ -200,27 +205,74 @@ public class automation_2 {
         // Melihat Kampanye
         MobileElement el1_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
         el1_5.click();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("User Melihat Kampanye");
-        MobileElement el2_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup");
-        el2_5.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        System.out.println("Kembali");
+        // Kembali
+        driver.navigate().back();
+        System.out.println("Kembali 1");
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Kembali 2");
 
         // Hasil tidak ditemukan
-        MobileElement el3_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]");
+        MobileElement el3_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
         el3_5.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        System.out.println("1");
-        MobileElement el4_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
+        System.out.println("Filter");
+        MobileElement el4_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
         el4_5.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        System.out.println("2");
+        System.out.println("Untick Box");
         MobileElement el5_5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView");
         el5_5.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        Assert.assertEquals(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView").getText(), "Pencarian kamu tidak ditemukan, coba kata kunci lain!");
+        System.out.println("Klik Filter");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        Assert.assertEquals(driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView").getText(), "Pencarian kamu tidak ditemukan, coba kata kunci lain!");
         System.out.println("Hasil tidak ditemukan");
+
+
+        // Portfolio
+        MobileElement el1_6 = (MobileElement) driver.findElementByAccessibilityId("Portofolio, tab, 3 of 4");
+        el1_6.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Klik Portolio Tab");
+        // Mulai Investasi
+        MobileElement el2_6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.TextView");
+        el2_6.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Mulai Investasi");
+        // Refresh Page
+        //ts.press(PointOption.point(785, 380)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(785, 1900)).release().perform();
+        ts.press(PointOption.point(screenSize.getWidth()/2, (int) (screenSize.height * 0.2))).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(PointOption.point(screenSize.getWidth()/2, (int) (screenSize.height * 0.8))).release().perform();
+        System.out.println("Refresh Page");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Pilih Kampanye
+        MobileElement el3_6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
+        el3_6.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Pilih Kampanye");
+        // Kampanye Terbuka
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Xiboba Cianjur']").getText(), "Xiboba Cianjur");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Kampanye Terbuka");
+
+        // Scroll
+        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        // Melihat Graph Prospek
+        MobileElement el4_6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]");
+        el4_6.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Graph Prospek");
+        // Overview
+        MobileElement el5_6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]");
+        el5_6.click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        System.out.println("Overview");
+
 
 
     }
