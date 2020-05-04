@@ -6,7 +6,7 @@ from selenium.webdriver.remote.file_detector import UselessFileDetector
 from selenium.webdriver.support import wait
 
 driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
-link_to_web = "http://localhost:3000/login"
+link_to_web = "https://penerbit.byznis.id/login"
 driver.get(link_to_web)
 driver.maximize_window()
 
@@ -30,15 +30,27 @@ driver.find_element_by_link_text("Tambah Kampanye").click()
 print("Tambah Kampanye Clicked")
 
 driver.implicitly_wait(10)
+"""
 # User memilih Tipe usaha
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]").click()
+driver.find_element_by_xpath("//div[@class='sc-bkAgUZ eyhXOw']").click()
 driver.implicitly_wait(10)
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]").click()
+driver.find_element_by_xpath("//div[@class='sc-LzLqG btaMha']").click()
 print("Tipe Usaha is Chosen")
+"""
 
 # User memasukkan nama PT
 driver.find_element_by_id("nama_perseroan").send_keys("PT. Automate Test")
 print("Nama PT Input")
+
+# Modal Dasar
+driver.find_element_by_xpath("//div[@class='sc-bkAgCL ifPjKj']//input[@placeholder='Masukkan modal dasar']").send_keys("2000000000")
+print("Modal Dasar")
+driver.find_element_by_xpath("//div[@class='sc-bkAgCK btsrMe']//input").send_keys("20000")
+print("Terbagi Atas")
+
+# Modal Disetor
+driver.find_element_by_xpath("//div[@class='sc-bkAgCM imVffw']//input[@placeholder='Masukkan modal dasar']").send_keys("500000")
+print("Modal disetor")
 
 # User memasukkan email pemegang saham (akun belum terdaftar)
 """
@@ -51,7 +63,7 @@ print("Email Pemegang Saham di hapus")
 
 # User memasukkan email pemegang saham
 driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/button[1]").click()
+driver.find_element_by_xpath("//button[contains(text(),'Enter')]").click()
 print("Email Pemegang Saham Benar")
 
 
