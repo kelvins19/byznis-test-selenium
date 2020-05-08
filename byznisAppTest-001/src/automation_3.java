@@ -38,11 +38,17 @@ public class automation_3 {
         // LOGIN
         MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]");
         el1.click();
-        MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[1]");
+        System.out.println("Klik Masuk");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        MobileElement el2 = (MobileElement) driver.findElementByXPath("//android.widget.EditText[@text='Alamat Email']");
         el2.sendKeys("test_user@gmail.com");
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[2]");
-        el3.sendKeys("TestUser002!");
-        MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView");
+        System.out.println("Email");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        MobileElement el3 = (MobileElement) driver.findElementByXPath("//android.widget.EditText[@text='Kata Sandi']");
+        el3.sendKeys("TestUser001!");
+        System.out.println("Password");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        MobileElement el4 = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='Masuk']");
         el4.click();
         System.out.println("Login Success");
 
@@ -120,17 +126,17 @@ public class automation_3 {
         System.out.println("Ubah Password");
         // Password Lama
         MobileElement el5_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[1]");
-        el5_3.sendKeys("TestUser002!");
+        el5_3.sendKeys("TestUser001!");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("Password Lama");
         // Password Baru
         MobileElement el6_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[2]");
-        el6_3.sendKeys("TestUser001!");
+        el6_3.sendKeys("TestUser002!");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("Password Baru");
         // Confirm Password Baru
         MobileElement el7_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText[3]");
-        el7_3.sendKeys("TestUser001!");
+        el7_3.sendKeys("TestUser002!");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("Confirm Password Baru");
         // Simpan
@@ -193,7 +199,7 @@ public class automation_3 {
         System.out.println("Simpan Editan");
         // Masukkan password
         MobileElement el5_4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText");
-        el5_4.sendKeys("TestUser001!");
+        el5_4.sendKeys("TestUser002!");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("Masukkan Password");
         // Konfirmasi Password

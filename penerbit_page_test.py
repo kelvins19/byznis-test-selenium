@@ -6,7 +6,7 @@ from selenium.webdriver.remote.file_detector import UselessFileDetector
 from selenium.webdriver.support import wait
 
 driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
-link_to_web = "https://penerbit.byznis.id/login"
+link_to_web = "http://localhost:3000/login"
 driver.get(link_to_web)
 driver.maximize_window()
 
@@ -43,13 +43,13 @@ driver.find_element_by_id("nama_perseroan").send_keys("PT. Automate Test")
 print("Nama PT Input")
 
 # Modal Dasar
-driver.find_element_by_xpath("//div[@class='sc-bkAgCL ifPjKj']//input[@placeholder='Masukkan modal dasar']").send_keys("2000000000")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/div[2]/input[1]").send_keys("2000000000")
 print("Modal Dasar")
-driver.find_element_by_xpath("//div[@class='sc-bkAgCK btsrMe']//input").send_keys("20000")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]").send_keys("20000")
 print("Terbagi Atas")
 
 # Modal Disetor
-driver.find_element_by_xpath("//div[@class='sc-bkAgCM imVffw']//input[@placeholder='Masukkan modal dasar']").send_keys("500000")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[2]/input[1]").send_keys("500000000")
 print("Modal disetor")
 
 # User memasukkan email pemegang saham (akun belum terdaftar)
@@ -65,6 +65,13 @@ print("Email Pemegang Saham di hapus")
 driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
 driver.find_element_by_xpath("//button[contains(text(),'Enter')]").click()
 print("Email Pemegang Saham Benar")
+# Jumlah lembar saham anggota
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[4]/div[1]/div[2]/div[1]/input[1]").send_keys("2")
+print("Jumlah lembar saham anggota")
+
+# Jumlah lembar saham Pendaftar
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[2]/div[2]/div[1]/input[1]").send_keys("1000")
+print("Jumlah lembar saham pendaftar")
 
 
 # User memasukkan nomor legalitas dokumen perusahaan
@@ -124,26 +131,35 @@ driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "bl
 file_npwp.send_keys(path_to_file)
 print("FILE 8 UPLOADED")
 
+# Lapor Pajak
+driver.find_element_by_id("lapor_pajak").send_keys("1234567891234567")
+file_lapor_pajak = driver.find_element_by_xpath("//label[contains(text(),'Unggah Dokumen')]//input[@id='lapor_pajak']")
+driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_lapor_pajak)
+file_lapor_pajak.send_keys(path_to_file)
+print("FILE 9 UPLOADED")
+
 # User memilih status hutang
 # Ada hutang
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[9]/div[1]/div[1]").click()
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[10]/div[1]/div[1]").click()
 driver.implicitly_wait(10)
 # Tidak Ada Hutang
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[9]/div[1]/div[2]").click()
+driver.find_element_by_xpath("//html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[10]/div[1]/div[2]/p[1]").click()
 print("Status Hutang di pilih")
 
-# User menklik Bisnis
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]").click()
+"""
 # User menklik Simpan Data
 driver.implicitly_wait(10)
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[8]/div[1]/div[1]/button[1]").click()
+driver.find_element_by_link_text("Simpan Data Sementara").click()
 print("Simpan Data Successful")
+"""
 
+# User menklik Bisnis
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/h4[1]").click()
 driver.implicitly_wait(10)
 # Alamat Kantor
-driver.find_element_by_xpath("//div[@class='sc-fzXfQu koaJkp']//div[1]//div[1]//div[1]//textarea[1]").send_keys("Jalan Alamat Kantor")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/textarea[1]").send_keys("Jalan Alamat Kantor")
 # Alamat Usaha
-driver.find_element_by_xpath("//div[@class='sc-fzXfQt kBppBG']//div[2]//div[1]//div[1]//textarea[1]").send_keys("Jalan Alamat Usaha")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/textarea[1]").send_keys("Jalan Alamat Usaha")
 # Link GMaps
 driver.find_element_by_id("link_google_maps").send_keys("https://g.page/itsu-jawa-timur?share")
 # No Telp
@@ -177,33 +193,23 @@ print("Logo Merk UPLOADED")
 # Status Merek
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/p[1]").click()
 
+"""
 # Status Usaha Yang Di Ajukan
 # Sudah Berjalan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/p[1]").click()
 driver.implicitly_wait(10)
 # Belum Berjalan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[2]/p[1]").click()
+"""
 
 # Berdiri Sejak
 driver.find_element_by_id("berdiri_sejak").send_keys("2019")
 
 # Total Cabang
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[5]/div[1]/input[1]").send_keys("0")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[2]/input[1]").send_keys("0")
 
 # Tanggal Kampanye
 
-# Dana Dibutuhkan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[7]/div[1]/input[1]").send_keys("2500000")
-# Jumlah Saham Diterbitkan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[8]/div[1]/input[1]").send_keys("1000")
-# Jumlah Saham Publik
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[9]/div[1]/input[1]").send_keys("500")
-# % Kepemilikan Saham Publik
-driver.implicitly_wait(20)
-# Dana Minimum
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[11]/div[1]/input[1]").send_keys("10000")
-# Sumber Dana Lain
-driver.find_element_by_id("sumber_dana_lain").send_keys("Anywhere")
 # Overview Usaha
 driver.find_element_by_id("deskripsi_campaign").send_keys("Ini Overvuew Usaha")
 
@@ -232,17 +238,17 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]").click()
 
 # ROI
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[4]/div[1]/div[1]/input[1]").send_keys("1")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[4]/div[1]/div[2]/input[1]").send_keys("10")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[5]/div[2]/div[1]/input[1]").send_keys("1")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[5]/div[2]/div[2]/input[1]").send_keys("10")
 # Dividen
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[5]/div[1]/div[1]/input[1]").send_keys("1")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[5]/div[1]/div[2]/input[1]").send_keys("10")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[6]/div[2]/div[1]/input[1]").send_keys("1")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[6]/div[2]/div[2]/input[1]").send_keys("10")
 # BEP
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[6]/div[1]/div[1]/input[1]").send_keys("1")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[6]/div[1]/div[2]/input[1]").send_keys("3")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[7]/div[2]/div[1]/input[1]").send_keys("1")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[7]/div[2]/div[2]/input[1]").send_keys("3")
 # Terima Hasil
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[7]/div[1]/div[1]/input[1]").send_keys("3")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[7]/div[1]/div[2]/input[1]").send_keys("6")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[8]/div[2]/div[1]/input[1]").send_keys("3")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[8]/div[2]/div[2]/input[1]").send_keys("6")
 
 # Proposal Usaha
 file_proposal_usaha = driver.find_element_by_xpath("//input[@id='usaha']")
@@ -254,6 +260,11 @@ file_laporan_keuangan = driver.find_element_by_xpath("//input[@id='keuangan']")
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_laporan_keuangan)
 file_laporan_keuangan.send_keys(path_to_file)
 print("Laporan Keuangan UPLOADED")
+# Roadmap Usaha
+file_roadmap_usaha = driver.find_element_by_xpath("//input[@id='roadmap']")
+driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_roadmap_usaha)
+file_roadmap_usaha.send_keys(path_to_file)
+print("Roadmap Usaha UPLOADED")
 
 """
 # Download Format Dokumen
@@ -263,10 +274,23 @@ print("Laporan Keuangan UPLOADED")
 """
 NOT WORKING YET. NEED TO BE REVISED.
 """
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[14]/div[1]/div[1]/div[1]").click()
+#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[14]/div[1]/div[1]/div[1]").click()
 driver.implicitly_wait(10)
 #driver.find_element_by_class_name("css-2613qy-menu").click()
 print("Riwayat Element Found")
+
+# -------------------------
+# -------------------------
+# -------------------------
+
+# Detail Perhitungan
+# User menklik Detail Perhitungan
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/h4[1]").click()
+driver.implicitly_wait(10)
+# Dana Dibutuhkan
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]").send_keys("1500000000")
+driver.implicitly_wait(10)
+
 
 # Submit Data (Error Handling)
 driver.find_element_by_link_text("Submit Semua Data").click()
