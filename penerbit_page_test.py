@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.file_detector import UselessFileDetector
 from selenium.webdriver.support import wait
+from selenium.webdriver.support.select import Select
 
 driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
 link_to_web = "http://localhost:3000/login"
@@ -66,7 +67,7 @@ driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
 driver.find_element_by_xpath("//button[contains(text(),'Enter')]").click()
 print("Email Pemegang Saham Benar")
 # Jumlah lembar saham anggota
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[4]/div[1]/div[2]/div[1]/input[1]").send_keys("2")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[4]/div[1]/div[2]/div[1]/input[1]").send_keys("0")
 print("Jumlah lembar saham anggota")
 
 # Jumlah lembar saham Pendaftar
@@ -169,16 +170,18 @@ driver.find_element_by_id("no_telp").send_keys("0811234567899")
 """
 NOT WORKING YET. NEED TO BE REVISED
 """
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]").click()
-#wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.sc-LzLtg.jZnaCD div.sc-LzLth.eRJXLr div.sc-LzLLG.lozSd div.sc-LzLLD.jTHetp div.sc-LzLLF.kygPOe div.sc-LzLLz.gIcyCJ:nth-child(1) div.sc-LzLLC.eALuzH:nth-child(2) div.sc-LzLLA.gflJNA div.select-option.css-2b097c-container:nth-child(2) div.css-kxksty-control div.css-1hwfws3 > div.css-1uccc91-singleValue"))).click()
+driver.find_element_by_xpath("//div[contains(text(),'Pilih provinsi')]")
 print("Provinsi Element Found")
+#driver.implicitly_wait(10)
+#driver.find_element_by_xpath("//div[contains(@class, 'css-26l3qy-menu')]//li[span = 'Aceh'").click()
+#print("Provinsi dipilih")
 
 
 # Kota
 """
 NOT WORKING YET. NEED TO BE REVISED
 """
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]").click()
+driver.find_element_by_xpath("//div[contains(text(),'Pilih kota')]")
 driver.implicitly_wait(10)
 print("Kota Element Found")
 
@@ -287,11 +290,18 @@ print("Riwayat Element Found")
 # User menklik Detail Perhitungan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/h4[1]").click()
 driver.implicitly_wait(10)
+print("Detail Perhitungan")
 # Dana Dibutuhkan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]").send_keys("1500000000")
+driver.find_element_by_xpath("//div[@class='sc-LzLrR isgkFA']//input").send_keys("1500000000")
 driver.implicitly_wait(10)
+print("Dana Dibutuhkan")
+
+# Simpan Data Sementara
+driver.find_element_by_link_text("Simpan Data Sementara").click()
+print("Simpan Data Sementara")
 
 
+"""
 # Submit Data (Error Handling)
 driver.find_element_by_link_text("Submit Semua Data").click()
 driver.implicitly_wait(20)
@@ -300,7 +310,7 @@ print("Error Handling Successful")
 
 
 # Submit Data (TRUE)
-
+"""
 
 # Log Out
 driver.implicitly_wait(10)

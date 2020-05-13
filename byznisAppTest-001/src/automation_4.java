@@ -60,9 +60,9 @@ public class automation_4 {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
         // Klik Beli Usaha
-        MobileElement el1_2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup");
+        MobileElement el1_2 = (MobileElement) driver.findElementByAccessibilityId("Jelajah, tab, 2 of 4");
         el1_2.click();
-        System.out.println("Beli Usaha");
+        System.out.println("Jelajah");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Klik Kampanye
         MobileElement el2_2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
@@ -96,23 +96,103 @@ public class automation_4 {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Scroll
-        ts.press(PointOption.point(826, 2085)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
         System.out.println("Scroll Success");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -126,9 +206,74 @@ public class automation_4 {
         el9.click();
         System.out.println("Konfirmasi");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Invoice
         Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Menunggu Pembayaran']").getText(), "Menunggu Pembayaran");
         System.out.println("Invoice Muncul");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Batalkan Transaksi
+        MobileElement el1_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[2]");
+        el1_3.click();
+        System.out.println("Batalkan Transaksi");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Batal
+        MobileElement el2_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]");
+        el2_3.click();
+        System.out.println("Klik Ya");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+        // Invoice Transaksi Gagal
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Transaksi Gagal']").getText(), "Transaksi Gagal");
+        System.out.println("Transaksi Gagal");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Scroll
+        ts.press(PointOption.point(826, 1800)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(862, 420)).release().perform();
+        System.out.println("Scroll Success");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        // Pesan Ulang
+        MobileElement el3_3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView");
+        el3_3.click();
+        System.out.println("Pesan Ulang");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Kembali
+        driver.navigate().back();
+        System.out.println("Kembali");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
+        // Lihat Portfolio Saham
+        MobileElement el10 = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Portofolio, tab, 3 of 4\"]");
+        el10.click();
+        System.out.println("Lihat Portfolio Saham");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Riwayat Transaksi
+        MobileElement el11 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");
+        el11.click();
+        System.out.println("Riwayat Transaksi");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // RIwayat Pendapatan
+        MobileElement el12 = (MobileElement) driver.findElementByXPath("//android.widget.Button[@content-desc=\"Riwayat Pendapatan\"]/android.view.ViewGroup");
+        el12.click();
+        System.out.println("Riwayat Pendapatan");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Kembali
+        MobileElement el13 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup");
+        el13.click();
+        System.out.println("Kembali");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Total Aset
+        MobileElement el14 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup");
+        el14.click();
+        System.out.println("Total Aset");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Daftar Aset
+        Assert.assertEquals(driver.findElementByXPath("//android.widget.TextView[@text='Daftar Aset Kamu']").getText(), "Daftar Aset Kamu");
+        System.out.println("Daftar Aset");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Kembali
+        driver.navigate().back();
+        System.out.println("Kembali");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     }
 }
