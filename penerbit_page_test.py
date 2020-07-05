@@ -10,7 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
-link_to_web = "https://penerbit.byznis.id/login"
+#link_to_web = "https://penerbit.byznis.id/login"
+link_to_web = "http://127.0.0.1:3000/login"
 driver.get(link_to_web)
 driver.maximize_window()
 
@@ -30,17 +31,11 @@ print("Login Successful")
 
 driver.implicitly_wait(10)
 # User click "Tambah Kampanye"
-driver.find_element_by_link_text("Tambah Kampanye").click()
+#driver.find_element_by_link_text("Tambah Kampanye").click()
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]").click()
 print("Tambah Kampanye Clicked")
 
 driver.implicitly_wait(10)
-"""
-# User memilih Tipe usaha
-driver.find_element_by_xpath("//div[@class='sc-bkAgUZ eyhXOw']").click()
-driver.implicitly_wait(10)
-driver.find_element_by_xpath("//div[@class='sc-LzLqG btaMha']").click()
-print("Tipe Usaha is Chosen")
-"""
 
 # User memasukkan nama PT
 driver.find_element_by_id("nama_perseroan").send_keys("PT. Automate Test")
@@ -64,7 +59,7 @@ print("Email Pemegang Saham Salah")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/img[1]").click()
 print("Email Pemegang Saham di hapus")
 """
-
+"""
 # User memasukkan email pemegang saham
 driver.find_element_by_id("email_pemegang_saham").send_keys("madzar@byznis.id")
 driver.find_element_by_xpath("//button[contains(text(),'Enter')]").click()
@@ -75,9 +70,9 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[4]/div[1]/div[2]/div[1]/input[1]").send_keys("0")
 driver.implicitly_wait(10)
 print("Jumlah lembar saham anggota")
-
+"""
 # Jumlah lembar saham Pendaftar
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[2]/div[2]/div[1]/input[1]").send_keys("1000")
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[4]/div[2]/div[2]/div[1]/input[1]").send_keys("5000")
 print("Jumlah lembar saham pendaftar")
 
 
@@ -153,6 +148,9 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath("//html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[10]/div[1]/div[2]/p[1]").click()
 print("Status Hutang di pilih")
 
+# Simpan dan Lanjutkan ke Detail Bisnis
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]").click()
+print("Simpan dan Lanjutkan ke Detail Bisnis")
 """
 # User menklik Simpan Data
 driver.implicitly_wait(10)
@@ -161,7 +159,7 @@ print("Simpan Data Successful")
 """
 
 # User menklik Bisnis
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/h4[1]").click()
+#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/h4[1]").click()
 driver.implicitly_wait(10)
 # Alamat Kantor
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/textarea[1]").send_keys("Jalan Alamat Kantor")
@@ -215,15 +213,6 @@ print("Logo Merk UPLOADED")
 # Status Merek
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/div[1]/div[1]/p[1]").click()
 
-"""
-# Status Usaha Yang Di Ajukan
-# Sudah Berjalan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/p[1]").click()
-driver.implicitly_wait(10)
-# Belum Berjalan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/div[1]/div[2]/p[1]").click()
-"""
-
 # Berdiri Sejak
 driver.find_element_by_id("berdiri_sejak").send_keys("2019")
 
@@ -264,9 +253,6 @@ foto_kampanye.send_keys(path_to_image)
 print("Foto Kampanye UPLOADED")
 driver.implicitly_wait(10)
 foto_kampanye.send_keys(path_to_image)
-# User Menghapus foto Kampanye
-#driver.implicitly_wait(10)
-#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]").click()
 
 # ROI
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[5]/div[2]/div[1]/input[1]").send_keys("1")
@@ -297,20 +283,17 @@ driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "bl
 file_roadmap_usaha.send_keys(path_to_file)
 print("Roadmap Usaha UPLOADED")
 
-"""
-# Download Format Dokumen
-#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[8]/div[1]/h3[1]").click()
-"""
+
 # Riwayat Pendapatan Bisnis
-"""
 waits = WebDriverWait(driver, 10)
 waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[10]/div[1]/div[1]')))
 driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[10]/div[1]/div[1]').click()
 print("Waiting for menu to be clickable")
 waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
-driver.find_element_by_class_name('css-bppnuz-option').click()
+waits.until(EC.presence_of_element_located((By.ID, 'react-select-5-option-0')))
+driver.find_element_by_id("react-select-5-option-0").click()
 print("Riwayat Pendapatan dipilih")
-"""
+
 
 # Tahun 1 Riwayat Pendapatan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[11]/div[1]/div[1]/div[1]/div[2]/input[1]").send_keys('2017')
@@ -332,11 +315,13 @@ print("Tahun 4 Riwayat Pendapatan")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[11]/div[1]/div[5]/div[1]/div[2]/input[1]").send_keys('2015')
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[11]/div[1]/div[5]/div[3]/div[2]/input[1]").send_keys('40000000')
 print("Tahun 5 Riwayat Pendapatan")
+driver.implicitly_wait(10)
 
 # Detail Perhitungan
 # User menklik Detail Perhitungan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/h4[1]").click()
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]").click()
 driver.implicitly_wait(10)
+print("Simpan Dan Lanjutkan")
 print("Detail Perhitungan")
 # Dana Dibutuhkan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]").send_keys("300000000")
@@ -344,35 +329,21 @@ driver.implicitly_wait(10)
 print("Dana Dibutuhkan")
 
 # Simpan Data Sementara
-driver.find_element_by_link_text("Simpan Data Sementara").click()
-print("Simpan Data Sementara")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]").click()
-print("Klik Saya Mengerti")
-
-# Kembali ke Tentang Perusahaan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/h4[1]").click()
-print("Tentang Perusahaan")
+#driver.find_element_by_link_text("Simpan Data Sementara").click()
+#print("Simpan Data Sementara")
 
 # Submit Data
+driver.implicitly_wait(20)
 driver.find_element_by_link_text("Submit Semua Data").click()
 driver.implicitly_wait(20)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[5]/div[1]/div[2]/div[1]/button[1]").click()
 print("Submit Data Berhasil")
 
-"""
-# Submit Data (Error Handling)
-driver.find_element_by_link_text("Submit Semua Data").click()
-driver.implicitly_wait(20)
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]").click()
-print("Error Handling Successful")
-"""
 # Log Out
-driver.implicitly_wait(10)
-#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]").click()
 #driver.implicitly_wait(10)
-driver.find_element_by_link_text("Keluar").click()
-driver.implicitly_wait(10)
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[1]/button[1]").click()
-driver.implicitly_wait(100)
-print("Berhasil Keluar")
+#driver.find_element_by_link_text("Keluar").click()
+#driver.implicitly_wait(10)
+#driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[1]/button[1]").click()
+#driver.implicitly_wait(100)
+#print("Berhasil Keluar")
 #driver.close()
