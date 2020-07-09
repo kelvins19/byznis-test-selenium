@@ -176,3 +176,41 @@ print("Simpan")
 # Yakin
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
 print("Yakin")
+
+
+"""
+MERUBAH STATUS KAMPANYE
+"""
+"""
+THIS SECTION CAN BE USED REPEATLY FOR ALL STATUS CHANGE CASE
+"""
+
+# Kampanye
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/h1[1]").click()
+print("Kampanye")
+# Kampanye d Proses
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]").click()
+print('Kampanye di Proses')
+# Memilih Kampanye
+# XPATH CAN BE CHANGED TO SUIT WHICH CAMPAIGN WANT TO BE USED ON THE TEST
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[2]").click()
+print("Kampanye Di Pilih")
+
+# Mengubah Status ke Evaluasi Pengajuan Pendanaan
+waits = WebDriverWait(driver, 10)
+waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
+driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]').click()
+print("Waiting for menu to be clickable")
+waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
+waits.until(EC.presence_of_element_located((By.ID, 'react-select-2-option-0')))
+driver.find_element_by_id("react-select-2-option-0").click()
+print("Verifikasi Dokumen Di Pilih")
+
+# Simpan
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]").click()
+print('Simpan')
+driver.implicitly_wait(10)
+# Yakin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
+print("Yakin")
+
