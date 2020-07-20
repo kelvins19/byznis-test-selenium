@@ -25,7 +25,7 @@ path_to_image = "/Users/kelvin/Desktop/test_file.jpeg"
 # Login
 driver.implicitly_wait(10)
 driver.find_element_by_class_name("email-input").send_keys("kelvin@byznis.id")
-driver.find_element_by_class_name("password-input").send_keys("g9t2cD7WyR0xT1FUdiRfPnlYx")
+driver.find_element_by_class_name("password-input").send_keys("TestUser001!")
 driver.find_element_by_xpath("//button[contains(text(),'Masuk')]").click()
 print("Login Successful")
 
@@ -52,7 +52,7 @@ driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[5]/div[2
 print("Banner")
 driver.implicitly_wait(10)
 
-
+"""
 # Banner Website
 file_banner = driver.find_element_by_id('upload-banner')
 driver.execute_script('arguments[0].style = ""; arguments[0].style.display = "block"; arguments[0].style.visibility = "visible";', file_banner)
@@ -92,7 +92,7 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]").click()
 print("SImpan")
 driver.implicitly_wait(10)
-
+"""
 
 """
 -----------------------------------------------------------------------------------------------------------
@@ -242,6 +242,49 @@ print("Sorted")
 -----------------------------------------------------------------------------------------------------------
 """
 
+# Admin
+driver.find_element_by_xpath("//h5[contains(text(),'Admin')]").click()
+print("Admin")
+driver.implicitly_wait(10)
+
+# Tambah Admin Baru
+driver.find_element_by_xpath("//body/div[@id='__next']/div/div/div[2]/div[1]/div[1]/div[1]").click()
+print("Tambah Admin Baru")
+driver.implicitly_wait(10)
+
+# Nama
+driver.find_element_by_xpath("//input[@placeholder='Kevin Cahya']").send_keys("Admin Test")
+print("Nama")
+# Jabatan
+driver.find_element_by_xpath("//input[@placeholder='CEO']").send_keys("Jabatan Test")
+print("Jabatan")
+# Email
+driver.find_element_by_xpath("//input[@placeholder='test@email.com']").send_keys("admintest@byznis.id")
+print("Email")
+# Role Admin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[5]/div[2]/div[1]").click()
+print("Regular Admin")
+# Submit
+driver.find_element_by_xpath("//div[contains(text(),'Submit')]").click()
+print("Submit")
+driver.implicitly_wait(10)
+# Konfirmasi Password
+driver.find_element_by_xpath("//input[@placeholder='Masukkan password kamu']").send_keys("TestUser001!")
+print("Konfirmasi Password")
+# Konfirmasi
+driver.find_element_by_xpath("//button[contains(text(),'Konfirmasi')]").click()
+print("Konfirmasi")
+driver.implicitly_wait(10)
+
+# Hapus
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/table[1]/tbody[1]/tr[12]/td[6]/div[2]/*[local-name()='svg'][1]").click()
+print("Hapus")
+driver.implicitly_wait(10)
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
+
 # Kampanye
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/h1[1]").click()
 print("Kampanye")
@@ -290,7 +333,7 @@ print("Kampanye Jalan")
 driver.implicitly_wait(10)
 
 # Memilih Kampanye
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]").click()
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]").click()
 print("Memilih Kampanye")
 
 # Bisnis
@@ -332,6 +375,17 @@ print("Publish Kampanye Di Pilih")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/button[1]").click()
 print("Simpan")
 
+# Logout
+driver.find_element_by_xpath("//h3[contains(text(),'Log Out')]").click()
+print("Logout")
+driver.implicitly_wait(10)
+# Ya
+driver.find_element_by_xpath("//button[contains(text(),'Ya')]").click()
+print("Ya")
+# Close Window.
+driver.close()
+print("Driver Closed")
+"""
 # Klik Bisnis
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[2]").click()
 print("Bisnis")
@@ -342,3 +396,4 @@ print("Riwayat Transaksi")
 # Transaksi Selesai
 #driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[4]/button[2]").click()
 print("Transaksi Selesai")
+"""

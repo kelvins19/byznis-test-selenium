@@ -25,7 +25,7 @@ path_to_image = "/Users/kelvin/Desktop/test_file.jpeg"
 # Login
 driver.implicitly_wait(10)
 driver.find_element_by_class_name("email-input").send_keys("kelvin@byznis.id")
-driver.find_element_by_class_name("password-input").send_keys("g9t2cD7WyR0xT1FUdiRfPnlYx")
+driver.find_element_by_class_name("password-input").send_keys("TestUser001!")
 driver.find_element_by_xpath("//button[contains(text(),'Masuk')]").click()
 print("Login Successful")
 
@@ -39,52 +39,74 @@ print("Kampanye")
 
 """
 -----------------------------------------------------------------------------------------------------------
-"""
-# Atur Industri & Jenis Usaha
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[3]/div[2]/h3[1]").click()
-print("Atur Industri & Jenis Usaha")
-# Klik +
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]").click()
-print("+")
-# Nama Industri
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/input[1]").send_keys("Industri Test")
-print("Nama Industi")
-# Nama Jenis Usaha
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[2]/input[1]").send_keys("Jenis Usaha Test")
-print("Jenis Usaha")
-# Simpan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/button[1]").click()
-print("Simpan")
+""" 
+# Kampanye Diajukan
+# Pilih Kampanye
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]").click()
+print("Kampanye DiPilih")
+driver.implicitly_wait(10)
+# Detail Perhitungan
+driver.find_element_by_xpath("//h4[contains(text(),'Detail Perhitungan')]").click()
+print("Detail Perhitungan")
+driver.implicitly_wait(10)
+# Reject Perhitungan
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/*[local-name()='svg'][1]").click()
+print("Reject Dana Dibutuhkan")
+driver.implicitly_wait(10)
+# Comment
+driver.find_element_by_xpath("//div[@id='__next']//div//div//div//div//div//div//div//div//div//textarea").send_keys("Ganti Dana Dibutuhkan")
+print("Comment")
 
-# Pilih Industri
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]").click()
-print("Pilih Industri")
-# Hapus Industri
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/button[2]").click()
-print("Hapus Industri")
+# Simpan Data Sementara
+driver.find_element_by_xpath("//div[contains(text(),'Simpan Revisi Sementara')]").click()
+print("Simpan Data Sementara")
+driver.implicitly_wait(10)
+# Mengerti
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[24]/div[1]/div[1]").click()
+print("Mengerti")
 
-# Klik Batal
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/div[1]").click()
-print("Batal")
+# Proses Dokumen
+driver.find_element_by_xpath("//div[contains(text(),'Proses Dokumen')]").click()
+print("Proses Dokumen")
+driver.implicitly_wait(10)
+
+# Kirim Data
+driver.find_element_by_xpath("//div[contains(text(),'Kirim Data')]").click()
+print("Kirim Data")
+driver.implicitly_wait(10)
+# Mengerti
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[22]/div[1]/div[1]").click()
+print("Mengerti")
 
 """
 -----------------------------------------------------------------------------------------------------------
 """
+# Kampanye
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/h1[1]").click()
+print("Kampanye")
+driver.implicitly_wait(10)
+
 # Tab Kampanye di Proses
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/h3[1]").click()
+driver.find_element_by_xpath("//h3[contains(text(),'Kampanye Diproses')]").click()
 print("Kampanye di Proses")
+driver.implicitly_wait(10)
 
 # Pilih Kampanye
 # XPATH CAN BE CHANGED TO SUIT WHICH CAMPAIGN WANT TO BE USED ON THE TEST
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[2]").click()
+driver.find_element_by_xpath("//td[contains(text(),'PT BDO')]").click()
 print("kampanye dipilih")
+driver.implicitly_wait(10)
 
-# Detail Bisnis
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[2]").click()
-print("Detail Bisnis")
+# Detail Perhitungan
+driver.find_element_by_xpath("//h4[contains(text(),'Detail Perhitungan')]").click()
+print("Detail Perhitungan")
+driver.implicitly_wait(10)
+
+# Terima Revisi
+driver.find_element_by_xpath("//body//div[@id='__next']//div//div//div//div//div//div//div//div//div//div//div[2]//*[local-name()='svg']").click()
+print("Terima Revisi")
 
 # Ganti Status Kampanye
-"""
 waits = WebDriverWait(driver, 10)
 waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
 driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]').click()
@@ -93,44 +115,19 @@ waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
 waits.until(EC.presence_of_element_located((By.ID, 'react-select-21-option-0')))
 driver.find_element_by_id("react-select-21-option-0").click()
 print("Verifikasi Dokumen Di Pilih")
-"""
 
-# Menyetujui Revisi
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[5]/div[2]/div[1]/div[8]/div[1]/div[1]/div[2]/*[local-name()='svg'][1]").click()
-print("Roadmap Usaha")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[5]/div[2]/div[1]/div[12]/div[1]/div[2]/*[local-name()='svg'][1]").click()
-print("Riwayat Pendapatan")
-
-# Valuasi Perusahaan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]").send_keys("2000000000")
-print("Valuasi Perusahaan")
-
-# Simpan Data Sementara
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]").click()
-print("Simpan Data Sementara")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[24]/div[1]/div[1]").click()
-print("Mengerti")
-
-# Kirim
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]").click()
-print("Kirim")
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[24]/div[1]/div[1]").click()
-print("Mengerti")
+# Simpan
+driver.find_element_by_xpath("//div[contains(text(),'Simpan')]").click()
+print("Simpan")
+driver.implicitly_wait(10)
+# Yakin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
+print("Yakin")
+driver.implicitly_wait(10)
 
 """
-MERUBAH STATUS KAMPANYE
+-----------------------------------------------------------------------------------------------------------
 """
-
-# Kampanye
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/h1[1]").click()
-print("Kampanye")
-# Kampanye d Proses
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]").click()
-print('Kampanye di Proses')
-# Memilih Kampanye
-# XPATH CAN BE CHANGED TO SUIT WHICH CAMPAIGN WANT TO BE USED ON THE TEST
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]").click()
-print("Kampanye Di Pilih")
 
 # Mengubah Status ke Pembayaran Deposit
 waits = WebDriverWait(driver, 10)
@@ -140,26 +137,33 @@ print("Waiting for menu to be clickable")
 waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
 waits.until(EC.presence_of_element_located((By.ID, 'react-select-2-option-0')))
 driver.find_element_by_id("react-select-2-option-0").click()
-print("Verifikasi Dokumen Di Pilih")
+print("Pembayaran Deposit Di Pilih")
 
 # Simpan
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]").click()
-print('Simpan')
+driver.find_element_by_xpath("//div[contains(text(),'Simpan')]").click()
+print("Simpan")
 driver.implicitly_wait(10)
 # Yakin
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
 print("Yakin")
+driver.implicitly_wait(10)
 
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
 # Tolak Pembayaran
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[2]").click()
+driver.find_element_by_xpath("//h5[contains(text(),'Tolak Pembayaran')]").click()
 print("Tolak Pembayaran")
 # Verifikasi Pembayaran
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]").click()
+driver.find_element_by_xpath("//h5[contains(text(),'Verifikasi Pembayaran')]").click()
 print("Verifikasi Pembayaran")
 # Status Fee Berhaisl DiUpdate
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[20]/div[1]/div[1]").click()
 print("Berhasil diupdate")
 
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
 # Mengubah Status ke Site Visit
 waits = WebDriverWait(driver, 10)
 waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
@@ -173,29 +177,15 @@ print("Disetujui Untuk Site Visit di Pilih")
 # Simpan
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]").click()
 print("Simpan")
+driver.implicitly_wait(10)
 # Yakin
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
 print("Yakin")
-
+driver.implicitly_wait(10)
 
 """
-MERUBAH STATUS KAMPANYE
+-----------------------------------------------------------------------------------------------------------
 """
-"""
-THIS SECTION CAN BE USED REPEATLY FOR ALL STATUS CHANGE CASE
-"""
-
-# Kampanye
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/h1[1]").click()
-print("Kampanye")
-# Kampanye d Proses
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]").click()
-print('Kampanye di Proses')
-# Memilih Kampanye
-# XPATH CAN BE CHANGED TO SUIT WHICH CAMPAIGN WANT TO BE USED ON THE TEST
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[2]").click()
-print("Kampanye Di Pilih")
-
 # Mengubah Status ke Evaluasi Pengajuan Pendanaan
 waits = WebDriverWait(driver, 10)
 waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
@@ -213,4 +203,81 @@ driver.implicitly_wait(10)
 # Yakin
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
 print("Yakin")
+driver.implicitly_wait(10)
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
+# Mengubah Status ke Penandatanganan Surat Perjanjian
+waits = WebDriverWait(driver, 10)
+waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
+driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]').click()
+print("Waiting for menu to be clickable")
+waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
+waits.until(EC.presence_of_element_located((By.ID, 'react-select-2-option-0')))
+driver.find_element_by_id("react-select-2-option-0").click()
+print("Tanda Tangan Surat Perjanjian Di Pilih")
+
+# Simpan
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]").click()
+print('Simpan')
+driver.implicitly_wait(10)
+# Yakin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
+print("Yakin")
+driver.implicitly_wait(10)
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
+
+# Mengubah Status ke Pembayaran Deposit
+waits = WebDriverWait(driver, 10)
+waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
+driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]').click()
+print("Waiting for menu to be clickable")
+waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
+waits.until(EC.presence_of_element_located((By.ID, 'react-select-2-option-0')))
+driver.find_element_by_id("react-select-2-option-0").click()
+print("Pembayaran Deposit Di Pilih")
+
+# Simpan
+driver.find_element_by_xpath("//div[contains(text(),'Simpan')]").click()
+print("Simpan")
+driver.implicitly_wait(10)
+# Yakin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
+print("Yakin")
+driver.implicitly_wait(10)
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
+
+# Mengubah Status ke Publish Kampanye
+waits = WebDriverWait(driver, 10)
+waits.until(EC.element_to_be_clickable((By.XPATH, '/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]')))
+driver.find_element_by_xpath('/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]').click()
+print("Waiting for menu to be clickable")
+waits.until(EC.element_to_be_clickable((By.CLASS_NAME, 'css-26l3qy-menu')))
+waits.until(EC.presence_of_element_located((By.ID, 'react-select-2-option-0')))
+driver.find_element_by_id("react-select-2-option-0").click()
+print("Publish Kampanye Di Pilih")
+
+# Simpan
+driver.find_element_by_xpath("//div[contains(text(),'Simpan')]").click()
+print("Simpan")
+driver.implicitly_wait(10)
+# Yakin
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[28]/div[1]/div[1]").click()
+print("Yakin")
+driver.implicitly_wait(10)
+
+"""
+-----------------------------------------------------------------------------------------------------------
+"""
 
