@@ -870,3 +870,15 @@ driver.implicitly_wait(10)
 driver.find_element_by_xpath("//h5[contains(text(),'Blog')]").click()
 print("Blog")
 driver.implicitly_wait(10)
+# Editor Artikel
+driver.find_element_by_xpath("//h2[contains(text(),'Editor Artikel')]").click()
+print("Editor Artikel")
+driver.implicitly_wait(10)
+# Cari Artikel
+driver.find_element_by_xpath("//input[@placeholder='Cari artikel']").send_keys("Ice")
+print("Cari Artikel")
+driver.implicitly_wait(10)
+# Search
+driver.find_element_by_xpath("//body/div[@id='__next']/div/div/div/div/div[1]/div//*[local-name()='svg']").click()
+print("Search")
+driver.implicitly_wait(10)

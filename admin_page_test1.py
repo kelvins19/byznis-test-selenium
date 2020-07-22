@@ -248,7 +248,7 @@ print("Admin")
 driver.implicitly_wait(10)
 
 # Tambah Admin Baru
-driver.find_element_by_xpath("//body/div[@id='__next']/div/div/div[2]/div[1]/div[1]/div[1]").click()
+driver.find_element_by_xpath("//h3[contains(text(),'Tambah Admin Baru')]").click()
 print("Tambah Admin Baru")
 driver.implicitly_wait(10)
 
@@ -277,8 +277,15 @@ print("Konfirmasi")
 driver.implicitly_wait(10)
 
 # Hapus
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/table[1]/tbody[1]/tr[12]/td[6]/div[2]/*[local-name()='svg'][1]").click()
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/table[1]/tbody[1]/tr[12]/td[7]/div[2]/*[local-name()='svg'][1]").click()
 print("Hapus")
+driver.implicitly_wait(10)
+# Konfirmasi Password
+driver.find_element_by_xpath("//input[@placeholder='Masukkan password kamu']").send_keys("TestUser001!")
+print("Konfirmasi Password")
+# Konfirmasi
+driver.find_element_by_xpath("//button[contains(text(),'Konfirmasi')]").click()
+print("Konfirmasi")
 driver.implicitly_wait(10)
 
 """
@@ -308,7 +315,7 @@ driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3
 print("Simpan")
 
 # Pilih Industri
-driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]").click()
+driver.find_element_by_xpath("//p[contains(text(),'Industri Test')]").click()
 print("Pilih Industri")
 # Hapus Industri
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[3]/button[2]").click()
@@ -375,6 +382,7 @@ print("Publish Kampanye Di Pilih")
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/button[1]").click()
 print("Simpan")
 
+"""
 # Logout
 driver.find_element_by_xpath("//h3[contains(text(),'Log Out')]").click()
 print("Logout")
@@ -385,7 +393,7 @@ print("Ya")
 # Close Window.
 driver.close()
 print("Driver Closed")
-"""
+
 # Klik Bisnis
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[2]").click()
 print("Bisnis")
