@@ -32,7 +32,7 @@ print("Login Successful")
 driver.implicitly_wait(10)
 # User click "Tambah Kampanye"
 #driver.find_element_by_link_text("Tambah Kampanye").click()
-driver.find_element_by_xpath("//a[contains(text(),'Tambah Kampanye')]").click()
+driver.find_element_by_xpath("//div[@id='__next']//div//div//div//div//div//button[contains(text(),'Tambah Kampanye')]").click()
 print("Tambah Kampanye Clicked")
 
 driver.implicitly_wait(10)
@@ -338,6 +338,24 @@ driver.find_element_by_link_text("Submit Semua Data").click()
 driver.implicitly_wait(20)
 driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[7]/div[1]/div[2]/div[1]/button[1]").click()
 print("Submit Data Berhasil")
+
+# Liat Notifikasi
+driver.implicitly_wait(10)
+driver.find_element_by_xpath("//body/div[@id='__next']/div/div/div/div/div/div/a[1]").click()
+driver.implicitly_wait(10)
+print("Notifikasi")
+# Home
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/img[1]").click()
+driver.implicitly_wait(10)
+print("Home")
+# Liat Detail
+driver.find_element_by_xpath("//h4[contains(text(),'Lihat Detail')]").click()
+print("Lihat Detail")
+driver.implicitly_wait(10)
+# Home
+driver.find_element_by_xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/img[1]").click()
+driver.implicitly_wait(10)
+print("Home")
 
 # Log Out
 #driver.implicitly_wait(10)

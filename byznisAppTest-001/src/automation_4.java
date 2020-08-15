@@ -36,6 +36,10 @@ public class automation_4 {
         Dimension screenSize = driver.manage().window().getSize();
         System.out.println("Screen Size is " + screenSize);
 
+        // Membeli Saham
+        // Transaksi
+        // Liat Aset
+
         // LOGIN
         MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]");
         el1.click();
@@ -46,7 +50,7 @@ public class automation_4 {
         System.out.println("Email");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         MobileElement el3 = (MobileElement) driver.findElementByXPath("//android.widget.EditText[@text='Kata Sandi']");
-        el3.sendKeys("TestUser001!");
+        el3.sendKeys("TestUser002!");
         System.out.println("Password");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         MobileElement el4 = (MobileElement) driver.findElementByXPath("//android.widget.TextView[@text='Masuk']");
@@ -59,13 +63,23 @@ public class automation_4 {
         System.out.println("Beranda Muncul");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-        // Klik Beli Usaha
+        // Klik Jelajah
         MobileElement el1_2 = (MobileElement) driver.findElementByAccessibilityId("Jelajah, tab, 2 of 4");
         el1_2.click();
         System.out.println("Jelajah");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Search Kampanye
+        MobileElement el2_0 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup");
+        el2_0.click();
+        System.out.println("Search");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Kata Pencarian
+        MobileElement el3_0 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText");
+        el3_0.sendKeys("Kopi");
+        System.out.println("Kata Pencarian");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Klik Kampanye
-        MobileElement el2_2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup");
+        MobileElement el2_2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup");
         el2_2.click();
         System.out.println("Memilih Kampanye");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
