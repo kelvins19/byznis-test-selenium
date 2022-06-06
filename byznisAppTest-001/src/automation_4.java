@@ -260,6 +260,11 @@ public class automation_4 {
         el10.click();
         System.out.println("Lihat Portfolio Saham");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Refresh Page
+        //ts.press(PointOption.point(785, 380)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1300))).moveTo(PointOption.point(785, 1900)).release().perform();
+        ts.press(PointOption.point(screenSize.getWidth()/2, (int) (screenSize.height * 0.2))).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(PointOption.point(screenSize.getWidth()/2, (int) (screenSize.height * 0.8))).release().perform();
+        System.out.println("Refresh Page");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         // Riwayat Transaksi
         MobileElement el11 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");
         el11.click();

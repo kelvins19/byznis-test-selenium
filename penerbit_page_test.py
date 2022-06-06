@@ -9,15 +9,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome("/Users/kelvin/Documents/Framework/chromedriver")
-#link_to_web = "https://penerbit.byznis.id/login"
-link_to_web = "http://127.0.0.1:3000/login"
+driver = webdriver.Chrome("/Users/kelvins19/Documents/Framework/chromedriver")
+link_to_web = "https://penerbit.byznis.id/login"
+#link_to_web = "http://127.0.0.1:3000/login"
 driver.get(link_to_web)
 driver.maximize_window()
 
 driver.file_detector = UselessFileDetector()
-path_to_file = "/Users/kelvin/Desktop/test_file.pdf"
-path_to_image = "/Users/kelvin/Desktop/test_file.jpeg"
+path_to_file = "/Users/kelvins19/Desktop/test_file.pdf"
+path_to_image = "/Users/kelvins19/Desktop/test_file.jpeg"
 
 # Login
 driver.implicitly_wait(10)
